@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>🐱 CAT WORDLE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>🐱 CAT WORDLE</header>
+
+<div class="game">
+    <div id="grid"></div>
+    <img id="catImg" class="catImg" src="">
+</div>
+
+<div id="keyboard"></div>
+
+<!-- WIN POPUP -->
+<<!-- WIN POPUP -->
+<div id="endPopup" class="popupOverlay hidden">
+  <div class="popupBox">
+      <img id="winCatImg" class="winPic" src="">
+      <h2 id="winText">BRAVO! 😺</h2>
+
+      <button onclick="location.href='wait.html'" class="infiniteBtn">
+        ÎNCEARCĂ MODUL INFINIT 🔁
+      </button>
+  </div>
+</div>
+
+<!-- TUTORIAL POPUP -->
+<div id="howTo" class="popupOverlay">
+  <div class="tutorialBox">
+      <button id="closeHow" class="closeBtn">✖</button>
+
+      <h2>Cum se joacă</h2>
+      <p>Ghicește numele pisicii în 6 încercări!</p>
+
+      <div class="example">
+        <div class="row">
+          <div class="tile correct">M</div>
+          <div class="tile">I</div>
+          <div class="tile">A</div>
+          <div class="tile">U</div>
+        </div>
+        <p>Litera M este în cuvânt și în poziția corectă</p>
+      </div>
+
+      <div class="example">
+        <div class="row">
+          <div class="tile">P</div>
+          <div class="tile exist">I</div>
+          <div class="tile">S</div>
+          <div class="tile">I</div>
+          <div class="tile">C</div>
+        </div>
+        <p>Litera I este în cuvânt, dar în alt loc</p>
+      </div>
+
+      <div class="example">
+        <div class="row">
+          <div class="tile wrong">H</div>
+          <div class="tile">Y</div>
+          <div class="tile">G</div>
+          <div class="tile">H</div>
+        </div>
+        <p>Litera H nu este în cuvânt</p>
+      </div>
+
+      <button id="closePlay">SĂ ÎNCEPEM! 😼</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

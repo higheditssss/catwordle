@@ -1,0 +1,181 @@
+body {
+  background:#121213;
+  color:#fff;
+  font-family:Arial, sans-serif;
+  text-align:center;
+  margin:0;
+}
+header {
+  padding:15px;
+  font-size:28px;
+  font-weight:bold;
+  border-bottom:1px solid #2b2b2b;
+}
+.game {
+  display:flex;
+  justify-content:center;
+  gap:90px;
+  padding-top:25px;
+}
+#grid {
+  display:grid;
+  grid-template-columns:repeat(6, 60px);
+  grid-template-rows:repeat(6, 60px);
+  gap:8px;
+}
+.tile {
+  width:60px;
+  height:60px;
+  background:#3a3a3c;
+  border-radius:6px;
+  border:2px solid #3a3a3c;
+  font-size:32px;
+  font-weight:bold;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-transform:uppercase;
+  transition:.2s;
+}
+.correct { background:#6aaa64 !important; border-color:#6aaa64 !important; }
+.exist { background:#c9b458 !important; border-color:#c9b458 !important; }
+.wrong { background:#3a3a3c !important; }
+
+/* SHAKE */
+.shake { animation:shake .4s; }
+@keyframes shake {
+  25%{transform:translateX(-5px);}
+  75%{transform:translateX(5px);}
+}
+
+/* FLIP + BOUNCE */
+.flip {
+  animation:flipBounce 0.7s ease forwards;
+}
+@keyframes flipBounce {
+  0% { transform: rotateX(0deg); }
+  45% { transform: rotateX(90deg); }
+  100% { 
+    transform: rotateX(0deg) scale(1.12);
+  }
+}
+
+/* CAT IMG */
+.catImg {
+  width:180px;
+  height:180px;
+  border-radius:14px;
+  object-fit:cover;
+  margin-top:60px;
+}
+
+/* KEYBOARD */
+#keyboard {
+  display:grid;
+  grid-template-columns:repeat(20,1fr);
+  gap:6px;
+  padding:35px;
+  max-width:700px;
+  margin:auto;
+}
+#keyboard button {
+  background:#818384;
+  border:none;
+  border-radius:6px;
+  height:55px;
+  font-size:17px;
+  font-weight:bold;
+  color:white;
+  cursor:pointer;
+  grid-column:span 2;
+}
+.wide { grid-column:span 4 !important; }
+
+/* POPUPS */
+.popupOverlay {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+.hidden { display:none!important; }
+
+.popupBox {
+  background:#1e1e20;
+  padding:25px 30px;
+  border-radius:14px;
+  width:320px;
+  text-align:center;
+}
+
+/* Tutorial box */
+.tutorialBox {
+  background:#1e1e20;
+  width:360px;
+  padding:22px 30px;
+  border-radius:14px;
+  text-align:center;
+  position:relative;
+}
+.closeBtn {
+  position:absolute;
+  top:8px;
+  right:8px;
+  font-size:22px;
+  background:none;
+  border:none;
+  color:white;
+  cursor:pointer;
+}
+.example {
+  margin:14px 0;
+}
+.row {
+  display:flex;
+  justify-content:center;
+  gap:6px;
+}
+.tutorialBox p {
+  font-size:14px;
+  opacity:.85;
+  margin:5px 0;
+}
+#closePlay {
+  width:100%;
+  margin-top:18px;
+  padding:12px;
+  font-size:18px;
+  background:#0d6efd;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+.winPic {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.infiniteBtn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 14px;
+  font-size: 17px;
+  font-weight: bold;
+  background:#00b7ff;
+  color:#000;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.infiniteBtn:hover {
+  background:#4dd8ff;
+  transform:scale(1.05);
+}

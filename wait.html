@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>🐱 CAT WORDL</title>
+<style>
+body{
+    background:#000;
+    color:#fff;
+    text-align:center;
+    font-size:28px;
+    padding-top:30px;
+    font-family:Arial;
+    margin:0;
+    overflow:hidden;
+}
+
+#wall {
+    position:absolute;
+    top:0; left:0;
+    width:100vw;
+    height:100vh;
+    display:grid;
+    grid-template-columns:repeat(10, 1fr);
+    grid-template-rows:repeat(6, 1fr);
+    z-index:-1;
+}
+
+.wallImg {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+</style>
+</head>
+<body>
+
+<h2>IA LA MUIE BA</h2>
+<p>Your IP:179.161.163.157</p>
+
+<div id="wall"></div>
+
+<script>
+const pics = [
+ "https://i.giphy.com/In0Lpu4FVivjISX9HT.webp",
+ "https://i.imgur.com/njnhERW.png",
+ "https://i.imgur.com/DqUVns8.jpeg",
+ "https://i.imgur.com/TN9IVSS.jpeg",
+ "https://i.imgur.com/RTrKvTn.jpeg"
+];
+
+const wall = document.getElementById("wall");
+
+// 10 x 6 grid = 60 imagini pentru FULL SCREEN
+for(let i = 0; i < 60; i++){
+    let img = document.createElement("img");
+    img.classList.add("wallImg");
+    img.src = pics[Math.floor(Math.random() * pics.length)];
+    wall.appendChild(img);
+}
+</script>
+
+</body>
+</html>
