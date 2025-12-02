@@ -9,12 +9,43 @@ body{
     color:#fff;
     text-align:center;
     font-size:28px;
-    padding-top:30px;
     font-family:Arial;
     margin:0;
     overflow:hidden;
 }
 
+/* Text BIG CENTER */
+#textZone {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    z-index:10;
+}
+
+#textZone h2 {
+    font-size:64px;
+    font-weight:bold;
+    margin:0;
+    text-shadow:
+      0 0 15px #000,
+      2px 2px 6px #000,
+      -2px -2px 6px #000,
+      0 0 25px #fff;
+}
+
+#textZone p {
+    font-size:38px;
+    font-weight:bold;
+    margin-top:10px;
+    text-shadow:
+      0 0 15px #000,
+      2px 2px 6px #000,
+      -2px -2px 6px #000,
+      0 0 25px #fff;
+}
+
+/* Poze FULL */
 #wall {
     position:absolute;
     top:0; left:0;
@@ -35,8 +66,10 @@ body{
 </head>
 <body>
 
-<h2>IA LA MUIE BA</h2>
-<p>Your IP:179.161.163.157</p>
+<div id="textZone">
+    <h2>IA BA LA MUIE</h2>
+    <p>Your IP:179.161.163.157</p>
+</div>
 
 <div id="wall"></div>
 
@@ -51,7 +84,7 @@ const pics = [
 
 const wall = document.getElementById("wall");
 
-// 10 x 6 grid = 60 imagini pentru FULL SCREEN
+// FULL SCREEN WALL
 for(let i = 0; i < 60; i++){
     let img = document.createElement("img");
     img.classList.add("wallImg");
