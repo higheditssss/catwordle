@@ -1,97 +1,96 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-<meta charset="UTF-8">
-<title>🐱 CAT WORDL</title>
-<style>
-body{
-    background:#000;
-    color:#fff;
-    text-align:center;
-    font-size:28px;
-    font-family:Arial;
-    margin:0;
-    overflow:hidden;
-}
-
-/* Text BIG CENTER */
-#textZone {
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    z-index:10;
-}
-
-#textZone h2 {
-    font-size:64px;
-    font-weight:bold;
-    margin:0;
-    text-shadow:
-      0 0 15px #000,
-      2px 2px 6px #000,
-      -2px -2px 6px #000,
-      0 0 25px #fff;
-}
-
-#textZone p {
-    font-size:38px;
-    font-weight:bold;
-    margin-top:10px;
-    text-shadow:
-      0 0 15px #000,
-      2px 2px 6px #000,
-      -2px -2px 6px #000,
-      0 0 25px #fff;
-}
-
-/* Poze FULL */
-#wall {
-    position:absolute;
-    top:0; left:0;
-    width:100vw;
-    height:100vh;
-    display:grid;
-    grid-template-columns:repeat(10, 1fr);
-    grid-template-rows:repeat(6, 1fr);
-    z-index:-1;
-}
-
-.wallImg {
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>🐱 CAT WORDLE – WAIT MODE</title>
+  <style>
+    body {
+      margin:0;
+      padding:0;
+      background:#000;
+      overflow:hidden;
+    }
+    #bgWall {
+      position:absolute;
+      top:0; left:0;
+      width:100vw; height:100vh;
+      display:grid;
+      grid-template-columns:repeat(10,1fr);
+      grid-template-rows:repeat(6,1fr);
+      z-index:0;
+    }
+    .wallImg {
+      width:100%; height:100%; object-fit:cover;
+    }
+    #overlay {
+      position:absolute;
+      top:0; left:0;
+      width:100vw; height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index:5;
+      pointer-events:none;
+    }
+    #overlay iframe {
+      width:100vw;
+      height:100vh;
+      pointer-events:auto;
+    }
+    #textZone {
+      position:absolute;
+      top:20px;
+      width:100%;
+      text-align:center;
+      color:#fff;
+      font-family:Arial, sans-serif;
+      z-index:10;
+      text-shadow: 0 0 10px #000, 0 0 20px #fff;
+    }
+    #textZone h2 {
+      font-size:48px;
+      margin:0;
+    }
+    #textZone p {
+      font-size:28px;
+      margin:6px 0 0;
+    }
+  </style>
 </head>
 <body>
 
-<div id="textZone">
-    <h2>IA BA LA MUIE</h2>
-    <p>Your IP:179.161.163.157</p>
-</div>
+  <div id="bgWall"></div>
 
-<div id="wall"></div>
+  <div id="textZone">
+    <h2>IDRAGON</h2>
+    <p>DRAGO</p>
+  </div>
 
-<script>
-const pics = [
- "https://i.giphy.com/In0Lpu4FVivjISX9HT.webp",
- "https://i.imgur.com/njnhERW.png",
- "https://i.imgur.com/DqUVns8.jpeg",
- "https://i.imgur.com/TN9IVSS.jpeg",
- "https://i.imgur.com/RTrKvTn.jpeg"
-];
+  <div id="overlay">
+    <iframe id="ytplayer"
+      src="https://www.youtube.com/embed/3cyS6wMVCqI?autoplay=1&mute=1&controls=0&rel=0"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
 
-const wall = document.getElementById("wall");
-
-// FULL SCREEN WALL
-for(let i = 0; i < 60; i++){
-    let img = document.createElement("img");
-    img.classList.add("wallImg");
-    img.src = pics[Math.floor(Math.random() * pics.length)];
-    wall.appendChild(img);
-}
-</script>
+  <script>
+    const pics = [
+      "https://i.giphy.com/In0Lpu4FVivjISX9HT.webp",
+      "https://i.imgur.com/njnhERW.png",
+      "https://i.imgur.com/DqUVns8.jpeg",
+      "https://i.imgur.com/TN9IVSS.jpeg",
+      "https://i.imgur.com/RTrKvTn.jpeg"
+    ];
+    const wall = document.getElementById("bgWall");
+    for (let i = 0; i < 60; i++) {
+      let img = document.createElement("img");
+      img.classList.add("wallImg");
+      img.src = pics[Math.floor(Math.random() * pics.length)];
+      wall.appendChild(img);
+    }
+  </script>
 
 </body>
 </html>
